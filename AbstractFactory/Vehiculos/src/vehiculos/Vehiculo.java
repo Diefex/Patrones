@@ -2,20 +2,12 @@ package vehiculos;
 
 import java.awt.Color;
 
-import accesorios.Accesorio;
-
 public abstract class Vehiculo {
 
 	protected String marca;
 	protected String tipo;
 	protected String modelo;
 	protected Color color;
-
-	protected String accesorio;
-
-	public void instalarAccesorio(Accesorio accesorio) {
-		accesorio.instalarEnVehiculo(this);
-	}
 
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
@@ -38,7 +30,7 @@ public abstract class Vehiculo {
 	}
 
 	public String getColor() {
-		return "" + color.getRed() + color.getGreen() + color.getBlue();
+		return color.getRed() + "," + color.getGreen() + "," + color.getBlue();
 	}
 
 }

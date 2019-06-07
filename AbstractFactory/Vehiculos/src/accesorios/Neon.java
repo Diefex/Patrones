@@ -2,10 +2,14 @@ package accesorios;
 
 import vehiculos.Vehiculo;
 
-public class Neon extends Accesorio {
+public class Neon extends VehiculoAccesorio {
+
+	public Neon(Vehiculo vehiculo) {
+		super(vehiculo);
+	}
 
 	@Override
-	public void instalarEnVehiculo(Vehiculo vehiculo) {
+	public void instalarAccesorio() {
 
 		System.out.println("Neon instalado en " + vehiculo.getModelo());
 
@@ -17,6 +21,11 @@ public class Neon extends Accesorio {
 
 	public void apagar() {
 		System.out.println("Neon apagado");
+	}
+
+	@Override
+	public String verAccesorio() {
+		return "Este " + vehiculo.getMarca() + " " + vehiculo.getModelo() + " tiene un Neón";
 	}
 
 }

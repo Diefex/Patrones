@@ -2,6 +2,10 @@ package presentacion;
 
 import java.util.Scanner;
 
+import accesorios.Aleron;
+import accesorios.Llamas;
+import accesorios.Neon;
+import accesorios.VehiculoAccesorio;
 import fabricas.AcuraFactory;
 import fabricas.PorscheFactory;
 import fabricas.RollRoyceFactory;
@@ -62,10 +66,35 @@ public class Cliente {
 			System.out.println("color no disponible");
 		}
 
+		System.out.println("Que accesorio desea?");
+		System.out.println("1. Alerón");
+		System.out.println("2. neón");
+		System.out.println("3. Pintar llamas");
+		VehiculoAccesorio vehiculoacc;
+		switch (sc.nextInt()) {
+		case 1: {
+			vehiculoacc = new Aleron(vehiculo);
+			break;
+		}
+		case 2: {
+			vehiculoacc = new Neon(vehiculo);
+			break;
+		}
+		case 3: {
+			vehiculoacc = new Llamas(vehiculo);
+			break;
+		}
+		default: {
+			vehiculoacc = null;
+			break;
+		}
+		}
+
 		System.out.println("Su vehiculo esta listo:");
-		System.out.println("Marca: " + vehiculo.getMarca());
-		System.out.println("Modelo: " + vehiculo.getModelo());
-		System.out.println("Color: " + vehiculo.getColor());
+		System.out.println("Marca: " + vehiculoacc.getMarca());
+		System.out.println("Modelo: " + vehiculoacc.getModelo());
+		System.out.println("Color: " + vehiculoacc.getColor());
+		System.out.println(vehiculoacc.verAccesorio());
 	}
 
 }

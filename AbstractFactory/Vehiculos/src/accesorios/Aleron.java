@@ -2,10 +2,14 @@ package accesorios;
 
 import vehiculos.Vehiculo;
 
-public class Aleron extends Accesorio {
+public class Aleron extends VehiculoAccesorio {
+
+	public Aleron(Vehiculo vehiculo) {
+		super(vehiculo);
+	}
 
 	@Override
-	public void instalarEnVehiculo(Vehiculo vehiculo) {
+	public void instalarAccesorio() {
 
 		System.out.println("Aleron instalado en " + vehiculo.getModelo());
 
@@ -17,6 +21,11 @@ public class Aleron extends Accesorio {
 
 	public void bajarAleron() {
 		System.out.println("aleron abajo");
+	}
+
+	@Override
+	public String verAccesorio() {
+		return "Este " + vehiculo.getMarca() + " " + vehiculo.getModelo() + " tiene un Alerón";
 	}
 
 }
